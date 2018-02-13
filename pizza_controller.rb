@@ -32,11 +32,17 @@ post "/pizza-orders/:id/delete" do
   @order = PizzaOrder.find(params[:id])
   @order.delete()
   redirect to("/pizza-orders")
-  # erb(:delete)
 end
 
 # edit
 get "/pizza-orders/:id/edit" do
   @order = PizzaOrder.find(params[:id])
   erb(:edit)
+end
+
+# update
+post "/pizza-orders/:id" do
+  @order = PizzaOrder.new(params)
+  @order.update()
+  redirect to("/pizza-orders")
 end

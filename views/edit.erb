@@ -1,6 +1,6 @@
 <p>Edit your order</p>
 
-<form method="POST" action="/pizza-orders">
+<form method="POST" action="/pizza-orders/<%= @order.id %>">
 
   <label for="first_name">First Name: </label>
   <input type="text" name="first_name" id="first_name" value="<%= @order.first_name %>" />

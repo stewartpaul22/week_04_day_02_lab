@@ -2,6 +2,7 @@
 
 <% @orders.each do |order| %>
 
+  <p>Order id: <%= order.id %></p>
   <p>Name: <%= order.pretty_name() %></p>
   <p>Order: <%= order.quantity %> x <%= order.topping %></p>
 
