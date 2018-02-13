@@ -1,0 +1,28 @@
+<p>Edit your order</p>
+
+<form method="POST" action="/pizza-orders">
+
+  <label for="first_name">First Name: </label>
+  <input type="text" name="first_name" id="first_name" value="<%= @order.first_name %>" />
+
+  <label for="last_name">Last Name: </label>
+  <input type="text" name="last_name" id="last_name" value="<%= @order.last_name %>" />
+
+  <label for="pizza-select">Select topping: </label>
+  <select name="topping">
+
+    <% toppings = ["Margherita", "Vegetarian"] %>
+    <% toppings.each do |topping| %>
+      <% if @order.topping == topping %>
+        <option value="<%= topping %>"><%= topping %></option>
+      <% end %>
+    <% end %>
+
+  </select>
+
+  <label for="quantity">Quantity</label>
+  <input type="number" name="quantity" id="quantity" value="<%= @order.quantity %>" />
+
+  <input type="submit" value="Update Order" />
+
+</form>
