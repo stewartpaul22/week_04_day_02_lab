@@ -11,9 +11,11 @@
   <label for="pizza-select">Select topping: </label>
   <select name="topping">
 
-    <% toppings = ["Margherita", "Vegetarian"] %>
+    <% toppings = ["Margherita", "Vegetarian", "Pepperoni", "Hawaiian"] %>
     <% toppings.each do |topping| %>
       <% if @order.topping == topping %>
+        <option value="<%= topping %>" selected><%= topping %></option>
+      <% else %>
         <option value="<%= topping %>"><%= topping %></option>
       <% end %>
     <% end %>
